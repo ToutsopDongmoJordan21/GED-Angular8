@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../_services/auth.service';
+import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
   selector: 'app-register',
@@ -12,21 +13,28 @@ export class RegisterComponent implements OnInit {
   isSignUpFailed = false;
   errorMessage = '';
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService,
+    private SpinnerService: NgxSpinnerService) { }
 
   ngOnInit() {
   }
 
   onSubmit() {
+    //show spinner
+    this.SpinnerService.show();
+
     this.authService.register(this.form).subscribe(
       data => {
         console.log(data);
         this.isSuccessful = true;
-        this.isSignUpFailed = false;
+        this.isSignUpFailed = false;  
       },
       err => {
         this.errorMessage = err.error.message;
-        this.isSignUpFailed = true;
+        this.isSignUpFailed = true; 
+
+        //hide method
+      this.SpinnerService.hide();
       }
     );
   }

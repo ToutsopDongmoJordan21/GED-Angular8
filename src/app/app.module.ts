@@ -13,8 +13,13 @@ import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { BoardUserComponent } from './board-user/board-user.component';
 import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
 import { ProfileComponent } from './profile/profile.component';
-
+import { NgxSpinnerModule, NgxSpinnerService } from "ngx-spinner";  
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ValidateEqualModule } from 'ng-validate-equal';
+import { ShowHidePasswordModule } from 'ngx-show-hide-password';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FooterComponent } from './footer/footer.component' 
 
 @NgModule({
   declarations: [
@@ -25,15 +30,22 @@ import { authInterceptorProviders } from './_helpers/auth.interceptor';
     BoardAdminComponent,
     BoardUserComponent,
     BoardModeratorComponent,
-    ProfileComponent
+    ProfileComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxSpinnerModule,
+    BrowserAnimationsModule,
+    ValidateEqualModule,
+    ShowHidePasswordModule,
+    FontAwesomeModule
   ],
-  providers: [authInterceptorProviders],
+  providers: [authInterceptorProviders, 
+    NgxSpinnerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

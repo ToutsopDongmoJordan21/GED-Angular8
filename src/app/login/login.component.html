@@ -18,6 +18,7 @@
           type="text"
           class="form-control"
           name="username"
+          placeholder="Enter Your Username"
           [(ngModel)]="form.username"
           required
           #username="ngModel"
@@ -32,15 +33,18 @@
       </div>
       <div class="form-group">
         <label for="password">Password</label>
-        <input
-          type="password"
-          class="form-control"
-          name="password"
-          [(ngModel)]="form.password"
-          required
-          minlength="6"
-          #password="ngModel"
-        />
+        <show-hide-password btnStyle="secondary" [btnOutline]="false">
+          <input
+            type="password"
+            class="form-control"
+            name="password"
+            placeholder="Enter Your Password"
+            [(ngModel)]="form.password"
+            required
+            minlength="6"
+            #password="ngModel"
+          />
+        </show-hide-password>
         <div
           class="alert alert-danger"
           role="alert"
@@ -66,6 +70,9 @@
           Login failed: {{ errorMessage }}
         </div>
       </div>
+      <ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">  
+        <p style="color: white">Please Wait. </p>  
+      </ngx-spinner>
     </form>
 
     <div class="alert alert-success" *ngIf="isLoggedIn">
