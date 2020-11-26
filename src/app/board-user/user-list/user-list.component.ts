@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { User } from 'src/app/_services/user';
+import { UserService } from 'src/app/_services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-list',
@@ -6,10 +10,33 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent implements OnInit {
+  users: Observable<User[]>;
 
-  constructor() { }
+  constructor(private userService: UserService,
+    private router: Router) { }
 
   ngOnInit() {
+    this.reloadData();
   }
+
+  reloadData() {
+    this.users = this.userService.getUserList();
+  }
+
+  deleteUser(id: number) {
+    this.userService.deleteUser(id)
+    .subscribe(
+     data => {
+      console.log(data);
+      this.reloadData();
+    },
+    error => console.log(error));
+  }
+
+  userDetails(id: number) {
+    this.router.navigate(['details', id]);
+  }
+
+  
 
 }
