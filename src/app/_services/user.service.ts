@@ -9,7 +9,21 @@ const API_URL = 'http://localhost:8080/api/test/';
 })
 export class UserService {
 
+  private baseUrl = 'http://localhost:8080/api/auth/users';
+
   constructor(private http: HttpClient) { }
+
+  getUser(id: number): Observable<any> {
+    return this.http.get(`${this.baseUrl}/${id}`);
+  }
+
+  deleteUser(id: number): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/${id}`, { responseType: 'text'});
+  }
+
+  getUserList(): Observable<any> {
+    return this.http.get(`${this.baseUrl}`);
+  }
 
   getPublicContent(): Observable<any> {
     return this.http.get(API_URL + 'all', { responseType: 'text' });

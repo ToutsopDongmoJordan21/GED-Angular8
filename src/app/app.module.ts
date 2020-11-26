@@ -19,7 +19,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ValidateEqualModule } from 'ng-validate-equal';
 import { ShowHidePasswordModule } from 'ngx-show-hide-password';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { FooterComponent } from './footer/footer.component' 
+import { FooterComponent } from './footer/footer.component';
+import { UserListComponent } from './board-user/user-list/user-list.component' 
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { FooterComponent } from './footer/footer.component'
     BoardUserComponent,
     BoardModeratorComponent,
     ProfileComponent,
-    FooterComponent
+    FooterComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule,
