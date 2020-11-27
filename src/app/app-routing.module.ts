@@ -8,6 +8,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { BoardUserComponent } from './board-user/board-user.component';
 import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
+import { UserDetailsComponent } from './board-user/user-details/user-details.component';
+import { UserListComponent } from './board-user/user-list/user-list.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -15,8 +17,10 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'user', component: BoardUserComponent },
+  { path: 'users', component: UserListComponent },
   { path: 'mod', component: BoardModeratorComponent },
   { path: 'admin', component: BoardAdminComponent },
+  { path: 'details/:id', component: UserDetailsComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 

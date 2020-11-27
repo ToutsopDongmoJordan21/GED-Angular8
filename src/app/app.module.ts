@@ -21,6 +21,7 @@ import { ShowHidePasswordModule } from 'ngx-show-hide-password';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FooterComponent } from './footer/footer.component';
 import { UserListComponent } from './board-user/user-list/user-list.component' 
+import { UserDetailsComponent } from './board-user/user-details/user-details.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { UserListComponent } from './board-user/user-list/user-list.component'
     BoardModeratorComponent,
     ProfileComponent,
     FooterComponent,
-    UserListComponent
+    UserListComponent,
+    UserDetailsComponent
   ],
   imports: [
     BrowserModule,
