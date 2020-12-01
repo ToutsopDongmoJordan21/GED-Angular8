@@ -25,6 +25,10 @@ export class UserService {
     return this.http.get(`${this.baseUrl}`);
   }
 
+  updateUser(id: number, value: any): Observable<any> {
+    return this.http.put(`${this.baseUrl}/${id}`, value);
+  }
+
   getPublicContent(): Observable<any> {
     return this.http.get(API_URL + 'all', { responseType: 'text' });
   }

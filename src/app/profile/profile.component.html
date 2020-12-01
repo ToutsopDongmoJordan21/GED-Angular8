@@ -26,8 +26,10 @@
     <li *ngFor="let role of currentUser.roles">
       {{ role }}
     </li>
-  </ul>
-</div>
+  </ul><br>
+
+  <button (click)="updateUser(currentUser.id)" class="btn btn-info" style="margin-left: 10px">Update</button>
+</div><br>
 
 <ng-template #loggedOut>
   Please login.

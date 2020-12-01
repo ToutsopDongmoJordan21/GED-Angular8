@@ -1,1 +1,33 @@
-<p>update-user works!</p>
+<h3>Update User</h3>
+<div style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="id">Id</label>
+      <input type="text" class="form-control" id="id" required [(ngModel)]="user.id" name="Id" disabled>
+    </div>
+
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="username" required [(ngModel)]="user.username" name="username">
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <show-hide-password btnStyle="secondary" [btnOutline]="false">
+          <input type="password" class="form-control" id="password" required [(ngModel)]="user.password" name="password" disabled>
+        </show-hide-password>
+      </div>
+
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input type="text" class="form-control" id="email" required [(ngModel)]="user.email" name="email">
+    </div>
+
+    <div class="form-group">
+      <label for="phoneNumber">Phone Number</label>
+      <input type="text" class="form-control" id="phoneNumber" required [(ngModel)]="user.phoneNumber" name="phoneNumber">
+    </div>
+
+    <button type="submit" class="btn btn-info">Submit</button>
+  </form>
+</div><br>

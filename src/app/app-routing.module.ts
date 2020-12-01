@@ -10,6 +10,7 @@ import { BoardModeratorComponent } from './board-moderator/board-moderator.compo
 import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { UserDetailsComponent } from './board-user/user-details/user-details.component';
 import { UserListComponent } from './board-user/user-list/user-list.component';
+import { UpdateUserComponent } from './profile/update-user/update-user.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'user', component: BoardUserComponent },
   { path: 'users', component: UserListComponent },
+  { path: 'update/:id', component: UpdateUserComponent },
   { path: 'mod', component: BoardModeratorComponent },
   { path: 'admin', component: BoardAdminComponent },
   { path: 'details/:id', component: UserDetailsComponent },
