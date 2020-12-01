@@ -1,3 +1,6 @@
+<ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">  
+  <p style="color: white">Please Wait. </p>  
+</ngx-spinner>
 <div class="panel panel-primary">
         <div class="panel-heading">
           <h2>User List</h2>
@@ -24,6 +27,9 @@
                                 <td><button (click)="deleteUser(user.id)" class="btn btn-danger">Delete</button>
                                     <button (click)="userDetails(user.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
                                 </td>
+                                <ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">  
+                                  <p style="color: white">Please Wait. </p>  
+                                </ngx-spinner>
                         </tr>
                     </tbody>
                 </table>
